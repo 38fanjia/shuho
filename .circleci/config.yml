@@ -36,11 +36,11 @@ jobs:
 
       # run build!
       - run:
-        name: build
-        command: |
-          mkdir -p ./public
-          yarn build -d ./public
-        when: always
+          name: build
+          command: |
+            mkdir -p ./public
+            yarn build -d ./public
+          when: always
 
       - store_artifacts:
           path: ./public
