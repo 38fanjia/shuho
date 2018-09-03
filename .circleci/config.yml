@@ -35,7 +35,12 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       # run build!
-      - run: yarn build
+      - run:
+        name: build
+        command: |
+          mkdir -p ./public
+          yarn build -d ./public
+        when: always
 
       - store_artifacts:
-          path: /tmp/public
+          path: ./public
