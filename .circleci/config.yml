@@ -38,9 +38,9 @@ jobs:
       - run:
           name: build
           command: |
-            mkdir -p ./public
-            yarn build -d ./public
+            mkdir -p ./shuho
+            yarn build -d ./shuho
           when: always
 
       - store_artifacts:
-          path: ./public
+          path: ./shuho
