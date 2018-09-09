@@ -13,8 +13,8 @@ timezone: Japan
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://38fanjia.github.io
-root: /
+url: http://38fanjia.github.io/shuho
+root: /shuho/
 permalink: :year/:month/:day/
 permalink_defaults:
 
@@ -29,7 +29,7 @@ i18n_dir: :lang
 skip_render:
 
 # Writing
-new_post_name: :year-:month-:day-:title.md # File name of new posts
+new_post_name: :year:month:day.md # File name of new posts
 default_layout: post
 titlecase: true # Transform title into titlecase
 external_link: true # Open external links in new tab
@@ -80,10 +80,3 @@ theme_config:
   menu:
     首頁: /
     歸檔: /archives
-
-# Deployment
-## Docs: https://hexo.io/docs/deployment.html
-deploy:
-  type: git
-  repo: https://github.com/38fanjia/38fanjia.github.io.git
-  branch: shuho
