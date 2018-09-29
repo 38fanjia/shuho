@@ -38,9 +38,23 @@ jobs:
       - run:
           name: build
           command: |
-            mkdir -p ./shuho
-            yarn build -d ./shuho
+            mkdir -p ./public/shuho
+            yarn build --deploy ./public/shuho
           when: always
 
       - store_artifacts:
-          path: ./shuho
+          path: ./public/
+
+      # deploy
+      - deployment:
+          deploy:
+            branch: master
+            commands:
+              - mkdocs build --clean
+              - git config --global user.email 38fanjia+github@gmail.com
+              - git config --global user.name 38fanjia
+              - cp ./public/shuho/* ./build/shuho
+              - git add --all ./public/shuho
+              - git commit -m "add shuho"
+              - git pull git@github.com:38fanjia/38fanjia.github.io.git master
+              - git push git@github.com:38fanjia/38fanjia.github.io.git master:shuho
