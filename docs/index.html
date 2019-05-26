@@ -63,6 +63,68 @@
 
   
     
+    <h3 class="article-title"><a href="/shuho/2019/05/26/"><span>週記#11</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/shuho/2019/05/26/" rel="bookmark">
+        <time class="entry-date published" datetime="2019-05-26T13:21:00.000Z">
+          2019-05-26
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <ul>
+<li>TestCafe<ul>
+<li>仕事で最近引き継いでリファクタリングをしている <a href="https://devexpress.github.io/testcafe/" target="_blank" rel="noopener">TestCafe</a> を利用した E2E テストのプロジェクトがある。</li>
+<li>サービスに関する操作の一連の流れを大きな一つのテストとして扱っているため、もう少し細かく分割できないかと調べてみたができなさそうだった(先行するテストの結果次第で後続のテストを実行するかどうかを判断したかった)。目的はターミナルに出力されるログの整理なので <code>console.log</code> を wrap する関数と <code>chalk</code> などで解決できそう。</li>
+<li>テスト実行中にエラーが起きた時、大きなテストの後続で行われるはずの処理が実行されないために問題が起きることがある。 <a href="https://github.com/fanjia38/testcafe-sample" target="_blank" rel="noopener">fanjia38/testcafe-sample</a> で検証し、ある程度の解決方法の目処がたった。テストの状態を <code>ctx</code> で管理し、テストの最後に実行される <code>after</code> で後処理を行うようにしてみたい。</li>
+</ul>
+</li>
+<li>Ginza.js#1<ul>
+<li>職場から割と近い場所で開催されたため、同僚の何名かと一緒に行ってきた。久々に感想など諸々をブログに書こうと思い立ったので、そのうち投稿したい。</li>
+</ul>
+</li>
+<li>lint-staged<ul>
+<li>testcafe-sample を作っている中で <a href="https://www.npmjs.com/package/lint-staged" target="_blank" rel="noopener">lint-staged</a> に関する警告が表示された。今回作っていたリポジトリでは、 JS ファイルしか扱わないので <code>husky</code> の pre-commit のみで対応したが、同じことを別の方法でできないか調べておきたい。<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">`lint-staged` no longer supports running scripts defined <span class="keyword">in</span> package.json.</span><br><span class="line"></span><br><span class="line">The same behavior can be achieved by changing the <span class="built_in">command</span> to any of the following:</span><br><span class="line">- `npm run lint:fix -- `</span><br><span class="line">- `eslint --fix <span class="built_in">test</span>/* `</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
     <h3 class="article-title"><a href="/shuho/2019/04/28/"><span>週記#10</span></a></h3>
     
   
@@ -515,68 +577,11 @@
 
 
 
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/shuho/2018/09/02/"><span>週記#1</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/shuho/2018/09/02/" rel="bookmark">
-        <time class="entry-date published" datetime="2018-09-02T14:00:23.000Z">
-          2018-09-02
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <p>為了學習台灣華語，我寫週記。<br>我的中文說得不好。我會努力的。</p>
-<ul>
-<li>我買了藍牙耳機。</li>
-<li>星期五我同事的最後上班日，她九月開始休產假。我很寂寞。</li>
-<li>小說「企鵝高速公路(ペンギン・ハイウェイ)」看完了。下次想看電影。</li>
-<li>好久沒去美術館了，我和朋友一起看了莫奈展。</li>
-<li>利用<a href="https://hexo.io" target="_blank" rel="noopener">hexo</a>搭建了本博客。</li>
-</ul>
-<h2 id="生詞"><a href="#生詞" class="headerlink" title="生詞"></a>生詞</h2><ul>
-<li>搭建 <code>Dājiàn</code></li>
-<li>產假 <code>Chǎnjià</code></li>
-<li>企鵝 <code>Qì&#39;é</code></li>
-<li>克洛德·莫奈 <code>Kè luò dé·mò nài</code></li>
-</ul>
-
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
 
 <nav class="pagination">
   
+  
+  <a href="/shuho/page/2/" class="pagination-next">Next</a>
   
 </nav>
     </main>
