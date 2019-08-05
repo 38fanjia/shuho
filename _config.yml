@@ -80,11 +80,3 @@ theme_config:
   menu:
     首頁: /
     歸檔: /archives
-
-
-## Deploy
-deploy:
-  type: git
-  repo: https://github.com/38fanjia/shuho.git
-  branch: published
-  extend_dirs: /
