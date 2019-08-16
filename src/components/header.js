@@ -3,12 +3,6 @@ import { Link, graphql, useStaticQuery } from "gatsby"
 import styled from "@emotion/styled"
 import { Helmet } from "react-helmet"
 
-const ListLink = props => (
-  <ListItem>
-    <Link to={props.to}>{props.children}</Link>
-  </ListItem>
-)
-
 export default () => {
   const data = useStaticQuery(
     graphql`
@@ -35,9 +29,6 @@ export default () => {
           {data.site.siteMetadata.siteTitle}
         </Title>
       </Link>
-      <Navigation>
-        <ListLink to={`/archives/`}>Archive</ListLink>
-      </Navigation>
     </header>
   )
 }
@@ -45,14 +36,4 @@ export default () => {
 const Title = styled.h1`
   margin-top: 0;
   display: inline-block;
-`
-
-const Navigation = styled.ul`
-  float: right;
-  list-style: none;
-`
-
-const ListItem = styled.li`
-  display: inline-block;
-  margin-right: 1rem;
 `
