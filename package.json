@@ -1,16 +1,17 @@
 {
-  "name": "hexo-site",
+  "name": "fanjia38-shuho",
   "version": "0.0.0",
   "private": true,
-  "hexo": {
-    "version": "3.9.0"
-  },
   "scripts": {
     "new": "hexo new",
-    "start": "hexo server",
-    "build": "hexo clean && hexo generate"
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "start": "npm run develop",
+    "serve": "gatsby serve"
   },
   "dependencies": {
+    "@emotion/core": "^10.0.16",
+    "@emotion/styled-base": "^10.0.15",
     "gatsby": "^2.13.65",
     "gatsby-plugin-emotion": "^4.1.2",
     "gatsby-plugin-react-helmet": "^3.1.3",
@@ -22,6 +23,6 @@
     "react-helmet": "^5.2.1",
     "react-typography": "^0.16.19",
     "typography": "^0.16.19",
-    "typography-theme-kirkham": "^0.16.19"
+    "typography-theme-de-young": "^0.16.19"
   }
 }
