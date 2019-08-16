@@ -8,26 +8,30 @@ export default (data) => {
   console.log(data)
   const post = data.content
   return (
-    <React.Fragment>
-      <h3
-        css={css`
-          margin-bottom: ${rhythm(1 / 4)};
-        `}
-      >
+    <Wrapper>
+      <Title>
         {post.frontmatter.title}{" "}
-        <span
-          css={css`
-            color: #bbb;
-          `}
-        >
+        <Date>
           — {post.frontmatter.date}
-        </span>
-      </h3>
-      <Text>{post.excerpt}</Text>
-    </React.Fragment>
+        </Date>
+      </Title>
+      <Body dangerouslySetInnerHTML={{ __html: post.html }} />
+    </Wrapper>
   )
 }
 
-const Text = styled.div`
+const Wrapper = styled.div`
+  margin-bottom: ${rhythm}
+`
+
+const Title = styled.h3`
+  margin-bottom: ${rhythm(1 / 4)};
+`
+
+const Date = styled.span`
+  color: #bbb;
+`
+
+const Body = styled.div`
   font-size: 0.8rem;
 `

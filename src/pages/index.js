@@ -1,9 +1,7 @@
 import React from "react"
 import { graphql, Link } from 'gatsby'
-import { css } from '@emotion/core'
 import styled from '@emotion/styled'
 
-import { rhythm } from "../utils/typography"
 import Layout from '../components/layout'
 import Post from '../components/post'
 
@@ -30,7 +28,7 @@ export const query = graphql`
           fields {
             slug
           }
-          excerpt
+          html
         }
       }
     }
