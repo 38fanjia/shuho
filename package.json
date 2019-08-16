@@ -7,7 +7,9 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "start": "npm run develop",
-    "serve": "gatsby serve"
+    "serve": "gatsby serve",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "dependencies": {
     "@emotion/core": "^10.0.16",
@@ -24,5 +26,15 @@
     "react-typography": "^0.16.19",
     "typography": "^0.16.19",
     "typography-theme-de-young": "^0.16.19"
+  },
+  "devDependencies": {
+    "eslint": "^6.1.0",
+    "eslint-config-react-app": "^5.0.1",
+    "eslint-config-standard": "^13.0.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-standard": "^4.0.0"
   }
 }
