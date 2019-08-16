@@ -18,17 +18,17 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `post`,
-        path: `${__dirname}/posts/`,
-      },
+        path: `${__dirname}/posts/`
+      }
     },
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-remark`,
     {
       resolve: `gatsby-plugin-typography`,
       options: {
-        pathToConfigModule: `src/utils/typography`,
-      },
+        pathToConfigModule: `src/utils/typography`
+      }
     },
     `gatsby-plugin-emotion`
-  ],
+  ]
 }

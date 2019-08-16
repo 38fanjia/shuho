@@ -1,7 +1,7 @@
-import React from "react"
-import { graphql, useStaticQuery } from "gatsby"
-import styled from "@emotion/styled"
-import { Helmet } from "react-helmet"
+import React from 'react'
+import { graphql, useStaticQuery } from 'gatsby'
+import styled from '@emotion/styled'
+import { Helmet } from 'react-helmet'
 
 import Header from './header'
 import Footer from './footer'
@@ -28,7 +28,7 @@ export default ({ children }) => {
         <link rel="canonical" href={data.site.siteMetadata.siteUrl} />
       </Helmet>
       <Header />
-        {children}
+      {children}
       <Footer />
     </Wrapper>
   )

@@ -1,8 +1,8 @@
-import React from "react"
-import { graphql, useStaticQuery } from "gatsby"
-import styled from "@emotion/styled"
+import React from 'react'
+import { graphql, useStaticQuery } from 'gatsby'
+import styled from '@emotion/styled'
 
-import { rhythm } from "../utils/typography"
+import { rhythm } from '../utils/typography'
 
 export default () => {
   const data = useStaticQuery(
@@ -25,6 +25,6 @@ export default () => {
 }
 
 const Footer = styled.footer`
-  margin: ${rhythm(2)} 0 ${rhythm(1/2)};
+  margin: ${rhythm(2)} 0 ${rhythm(1 / 2)};
   text-align: center;
 `

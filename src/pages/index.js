@@ -1,11 +1,11 @@
-import React from "react"
+import React from 'react'
 import { graphql } from 'gatsby'
 import styled from '@emotion/styled'
 
 import Layout from '../components/layout'
 import Post from '../components/post'
 
-export default ({data}) => (
+export default ({ data }) => (
   <Layout>
     <PageCount>{data.allMarkdownRemark.totalCount} Posts</PageCount>
     {data.allMarkdownRemark.edges.map(({ node }) => (

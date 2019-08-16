@@ -1,7 +1,7 @@
-import React from "react"
+import React from 'react'
 import styled from '@emotion/styled'
 
-import { rhythm } from "../utils/typography"
+import { rhythm } from '../utils/typography'
 
 export default (data) => {
   console.log(data)
@@ -21,12 +21,12 @@ const Wrapper = styled.div`
   margin-bottom: ${rhythm(1)};
   background-color: #fff;
   padding: ${rhythm(1.5)};
-  border-radius: ${rhythm(1/2)};
+  border-radius: ${rhythm(1 / 2)};
 `
 
 const Title = styled.h3`
   margin: 0;
-  padding-left: ${rhythm(1/2)};
+  padding-left: ${rhythm(1 / 2)};
   display: inline-block;
   font-size: 0.9rem;
 `
