@@ -8,8 +8,10 @@ module.exports = {
   /* Your site config here */
   siteMetadata: {
     siteTitle: `shuho`,
+    siteDescription: `fanjia38 中文的周记`,
     siteUrl: `https://fanjia38.github.io/shuho/`,
-    author: `fanjia38`
+    author: `fanjia38`,
+    mainColor: `#00aa8c`
   },
   plugins: [
     {

@@ -1,7 +1,7 @@
 import React from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
 import styled from "@emotion/styled"
-import { Helmet } from "react-helmet"
+import { rhythm } from "../utils/typography";
 
 export default () => {
   const data = useStaticQuery(
@@ -10,7 +10,7 @@ export default () => {
         site {
           siteMetadata {
             siteTitle,
-            siteUrl
+            siteDescription
           }
         }
       }
@@ -18,22 +18,27 @@ export default () => {
   )
 
   return (
-    <header>
-      <Helmet>
-        <meta charSet="utf-8" />
-        <title>{data.site.siteMetadata.siteTitle}</title>
-        <link rel="canonical" href={data.site.siteMetadata.siteUrl} />
-      </Helmet>
+    <StyledHeader>
       <Link to={`/`}>
         <Title>
           {data.site.siteMetadata.siteTitle}
         </Title>
       </Link>
-    </header>
+      <Description>{data.site.siteMetadata.siteDescription}</Description>
+    </StyledHeader>
   )
 }
+
+const StyledHeader = styled.header`
+  text-align: center;
+  padding-top: ${rhythm(1.5)};
+`
 
 const Title = styled.h1`
   margin-top: 0;
   display: inline-block;
+`
+
+const Description = styled.p`
+  font-size: 0.7rem;
 `

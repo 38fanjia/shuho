@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 import styled from '@emotion/styled'
 
 import Layout from '../components/layout'
@@ -7,9 +7,9 @@ import Post from '../components/post'
 
 export default ({data}) => (
   <Layout>
-    <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
+    <PageCount>{data.allMarkdownRemark.totalCount} Posts</PageCount>
     {data.allMarkdownRemark.edges.map(({ node }) => (
-      <Post id={node.id} content={node} />
+      <Post key={node.id} content={node} />
     ))}
   </Layout>
 )
@@ -23,7 +23,7 @@ export const query = graphql`
           id
           frontmatter {
             title
-            date(formatString: "DD MMMM, YYYY")
+            date(formatString: "YYYY-mm-DD")
           }
           fields {
             slug
@@ -35,6 +35,7 @@ export const query = graphql`
   }
 `
 
-const Text = styled.div`
+const PageCount = styled.h4`
   font-size: 0.8rem;
+  text-align: right;
 `
