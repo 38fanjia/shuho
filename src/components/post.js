@@ -21,7 +21,7 @@ const Wrapper = styled.div`
   margin-bottom: ${rhythm(1)};
   background-color: #fff;
   padding: ${rhythm(1.5)};
-  border-radius: ${rhythm(1 / 2)};
+  border-radius: 5px;
 `
 
 const Title = styled.h3`
