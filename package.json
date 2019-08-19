@@ -3,13 +3,13 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "new": "hexo new",
     "build": "gatsby build",
     "develop": "gatsby develop",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "deploy": "rm -rf docs && gatsby build --prefix-paths && mv public/ docs/"
   },
   "dependencies": {
     "@emotion/core": "^10.0.16",

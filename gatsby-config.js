@@ -6,6 +6,7 @@
 
 module.exports = {
   /* Your site config here */
+  pathPrefix: "/shuho",
   siteMetadata: {
     siteTitle: `shuho`,
     siteDescription: `fanjia38 中文的周记`,
