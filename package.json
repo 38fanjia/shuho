@@ -7,7 +7,7 @@
     "develop": "gatsby develop",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "lint": "eslint .",
+    "lint": "eslint --ignore-pattern 'docs/*' .",
     "lint:fix": "eslint . --fix",
     "deploy": "rm -rf docs && gatsby build --prefix-paths && mv public/ docs/"
   },
