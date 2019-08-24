@@ -6,10 +6,9 @@
 
 module.exports = {
   /* Your site config here */
-  pathPrefix: '/shuho',
   siteMetadata: {
     siteTitle: `shuho`,
-    siteDescription: `fanjia38 中文的周记`,
+    siteDescription: `fanjia38 中文的周记。たまに日本語。`,
     siteUrl: `https://fanjia38.github.io/shuho/`,
     author: `fanjia38`,
     mainColor: `#00aa8c`

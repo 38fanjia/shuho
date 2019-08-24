@@ -36,5 +36,7 @@ export default ({ children }) => {
 
 const Wrapper = styled.div`
   margin: 0 auto;
-  max-width: 700px;
+  max-width: 900px;
+  color: #646464;
+  font-family: arial,"Microsoft Yahei","微软雅黑",Tahoma,Arial,Helvetica,PingFang SC,'Alegreya',sans-serif;
 `

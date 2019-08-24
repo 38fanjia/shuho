@@ -25,6 +25,17 @@ export default () => {
 }
 
 const Footer = styled.footer`
-  margin: ${rhythm(2)} 0 ${rhythm(1 / 2)};
+  padding: ${rhythm(1)} 0 ${rhythm(0.5)};
   text-align: center;
+  border-top: 1px solid;
+
+  & > p {
+    margin: 0;
+    font-size: 0.8em;
+  }
+
+  @media screen and (max-width: 768px){
+    background-color: #646464;
+    color: #fff;
+  }
 `
