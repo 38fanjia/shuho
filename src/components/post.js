@@ -8,33 +8,38 @@ export default (data) => {
   const post = data.content
   return (
     <Wrapper>
-      <Date>{post.frontmatter.date}</Date>
-      <Title>
-        {post.frontmatter.title}
-      </Title>
+      <div>
+        <Title>{post.frontmatter.title}</Title>
+        <Date>{post.frontmatter.date}</Date>
+      </div>
       <Body dangerouslySetInnerHTML={{ __html: post.html }} />
     </Wrapper>
   )
 }
 
 const Wrapper = styled.div`
-  margin-bottom: ${rhythm(1)};
-  background-color: #fff;
-  padding: ${rhythm(1.5)};
-  border-radius: 5px;
+  margin-bottom: ${rhythm(3)};
 `
 
-const Title = styled.h3`
-  margin: 0;
-  padding-left: ${rhythm(1 / 2)};
-  display: inline-block;
-  font-size: 0.9rem;
-`
-
-const Date = styled.p`
-  color: #00aa8c;
-  display: inline-block;
+const Title = styled.div`
   font-size: ${rhythm(1)};
+  display: flex;
+  align-items: center;
+
+  &::after {
+    content: '';
+    border-top: 1px solid;
+    flex-grow: 1;
+    margin-left: 10px;
+  }
+`
+
+const Date = styled.h3`
+  font-size: ${rhythm(0.7)};
+  font-weight: normal;
+  color: #00aa8c;
+  text-align: right;
+  margin: 0;
 `
 
 const Body = styled.div`

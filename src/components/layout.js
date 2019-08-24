@@ -36,5 +36,5 @@ export default ({ children }) => {
 
 const Wrapper = styled.div`
   margin: 0 auto;
-  max-width: 700px;
+  max-width: 900px;
 `

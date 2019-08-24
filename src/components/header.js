@@ -25,6 +25,7 @@ export default () => {
         </Title>
       </Link>
       <Description>{data.site.siteMetadata.siteDescription}</Description>
+      <HeaderImage src={'image/title.jpg'} />
     </StyledHeader>
   )
 }
@@ -41,4 +42,8 @@ const Title = styled.h1`
 
 const Description = styled.p`
   font-size: 0.7rem;
+`
+
+const HeaderImage = styled.img`
+  max-width: 900px;
 `
