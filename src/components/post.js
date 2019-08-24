@@ -4,7 +4,6 @@ import styled from '@emotion/styled'
 import { rhythm } from '../utils/typography'
 
 export default (data) => {
-  console.log(data)
   const post = data.content
   return (
     <Wrapper>
@@ -17,7 +16,7 @@ export default (data) => {
   )
 }
 
-const Wrapper = styled.div`
+const Wrapper = styled.article`
   margin-bottom: ${rhythm(3)};
 `
 
@@ -46,6 +45,19 @@ const Body = styled.div`
   color: #646464;
   line-height: 1.7;
   font-size: 0.8rem;
+  word-wrap: break-word;
+  word-break: keep-all;
+  padding-left: 50px;
+
+  h2 {
+    font-size: ${rhythm(0.8)};
+    color: inherit;
+    position: relative;
+    background: linear-gradient(transparent 60%, #91ceb8 0%);
+    padding: 5px 0 5px 5px;
+    width: 50%;
+    max-width: 250px;
+  }
 
   li {
     margin-bottom: 0;
@@ -57,5 +69,13 @@ const Body = styled.div`
     ul {
       margin-top: 0;
     }
+  }
+
+  pre {
+    overflow-y: scroll;
+  }
+
+  @media screen and (max-width: 768px){
+    padding: 0 10px;
   }
 `

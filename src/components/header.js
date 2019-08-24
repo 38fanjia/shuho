@@ -46,4 +46,5 @@ const Description = styled.p`
 
 const HeaderImage = styled.img`
   max-width: 900px;
+  width: 100%;
 `
