@@ -9,7 +9,7 @@
     "serve": "gatsby serve",
     "lint": "eslint --ignore-pattern 'docs/*' .",
     "lint:fix": "eslint . --fix",
-    "deploy": "rm -rf docs && gatsby build --prefix-paths && mv public/ docs/"
+    "dist": "rm -rf docs && gatsby build --prefix-paths && mv public/ docs/"
   },
   "dependencies": {
     "@emotion/core": "^10.0.16",
