@@ -18,6 +18,10 @@ export default (data) => {
 
 const Wrapper = styled.article`
   margin-bottom: ${rhythm(3)};
+
+  @media screen and (max-width: 768px){
+    margin: 0 5px ${rhythm(3)};
+  }
 `
 
 const Title = styled.div`
@@ -29,7 +33,11 @@ const Title = styled.div`
     content: '';
     border-top: 1px solid;
     flex-grow: 1;
-    margin-left: 10px;
+    margin-left: 5px;
+  }
+
+  @media screen and (max-width: 768px){
+    font-size: ${rhythm(0.8)};
   }
 `
 
@@ -46,7 +54,7 @@ const Body = styled.div`
   line-height: 1.7;
   font-size: 0.8rem;
   word-wrap: break-word;
-  word-break: keep-all;
+  word-break: break-all;
   padding-left: 50px;
 
   h2 {
@@ -59,12 +67,12 @@ const Body = styled.div`
     max-width: 250px;
   }
 
+  p {
+    margin-bottom: 0;
+  }
+
   li {
     margin-bottom: 0;
-
-    p {
-      margin-bottom: 0;
-    }
 
     ul {
       margin-top: 0;
@@ -73,6 +81,13 @@ const Body = styled.div`
 
   pre {
     overflow-y: scroll;
+  }
+
+  code {
+    background-color: #d7efc1;
+    font-size: 0.8rem;
+    padding: 0 5px;
+    border-radius: 3px;
   }
 
   @media screen and (max-width: 768px){
