@@ -39,4 +39,5 @@ const PageCount = styled.h4`
   font-size: 0.8rem;
   text-align: right;
   color: inherit;
+  padding-right: 5px;
 `

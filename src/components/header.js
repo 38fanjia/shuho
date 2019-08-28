@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, graphql, useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 import styled from '@emotion/styled'
 import { rhythm } from '../utils/typography'
 
@@ -10,6 +10,7 @@ export default () => {
         site {
           siteMetadata {
             siteTitle,
+            siteUrl,
             siteDescription
           }
         }
@@ -19,11 +20,11 @@ export default () => {
 
   return (
     <StyledHeader>
-      <Link to={`/`}>
+      <a href={data.site.siteMetadata.siteUrl}>
         <Title>
           {data.site.siteMetadata.siteTitle}
         </Title>
-      </Link>
+      </a>
       <Description>{data.site.siteMetadata.siteDescription}</Description>
       <HeaderImage src={'image/title.jpg'} />
     </StyledHeader>
