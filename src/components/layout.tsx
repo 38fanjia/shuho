@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
+import {Global, css} from '@emotion/core'
 import styled from '@emotion/styled'
 import { Helmet } from 'react-helmet'
 
@@ -27,6 +28,16 @@ export default ({ children }: any) => {
         <title>{data.site.siteMetadata.siteTitle}</title>
         <link rel="canonical" href={data.site.siteMetadata.siteUrl} />
       </Helmet>
+      <Global
+        styles={css`
+          html {
+            background-color: #f8f4e6;
+          }
+          a {
+            color: #00aa8c;
+          }
+        `
+      }/>
       <Header />
       {children}
       <Footer />
