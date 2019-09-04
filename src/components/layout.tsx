@@ -6,7 +6,7 @@ import { Helmet } from 'react-helmet'
 import Header from './header'
 import Footer from './footer'
 
-export default ({ children }) => {
+export default ({ children }: any) => {
   const data = useStaticQuery(
     graphql`
       query {

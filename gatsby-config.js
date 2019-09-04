@@ -29,6 +29,7 @@ module.exports = {
         pathToConfigModule: 'src/utils/typography'
       }
     },
-    'gatsby-plugin-emotion'
+    'gatsby-plugin-emotion',
+    'gatsby-plugin-typescript'
   ]
 }

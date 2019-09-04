@@ -19,7 +19,7 @@ export default () => {
   )
 
   return (
-    <StyledHeader>
+    <Header>
       <a href={data.site.siteMetadata.siteUrl}>
         <Title>
           {data.site.siteMetadata.siteTitle}
@@ -27,11 +27,11 @@ export default () => {
       </a>
       <Description>{data.site.siteMetadata.siteDescription}</Description>
       <HeaderImage src={'image/title.jpg'} />
-    </StyledHeader>
+    </Header>
   )
 }
 
-const StyledHeader = styled.header`
+const Header = styled.header`
   text-align: center;
   padding-top: ${rhythm(1.5)};
 `

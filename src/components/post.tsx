@@ -3,7 +3,7 @@ import styled from '@emotion/styled'
 
 import { rhythm } from '../utils/typography'
 
-export default (data) => {
+export default (data: any) => {
   const post = data.content
   return (
     <Wrapper>
