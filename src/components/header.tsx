@@ -3,8 +3,18 @@ import { graphql, useStaticQuery } from 'gatsby'
 import styled from '@emotion/styled'
 import { rhythm } from '../utils/typography'
 
+interface queryTypes {
+  site: {
+    siteMetadata: {
+      siteTitle: string
+      siteUrl: string
+      siteDescription: string
+    }
+  }
+}
+
 export default () => {
-  const data = useStaticQuery(
+  const data: queryTypes = useStaticQuery(
     graphql`
       query {
         site {

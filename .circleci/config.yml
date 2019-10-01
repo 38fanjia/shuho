@@ -23,8 +23,8 @@ jobs:
           paths:
             - node_modules
 
-      # run build!
       - run: yarn lint
+      - run: yarn type-check
 
       # commit
       # - run: git config user.name $GITHUB_NAME
