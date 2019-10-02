@@ -1,32 +1,49 @@
 import React from 'react'
+import { Helmet } from 'react-helmet'
 import { graphql, useStaticQuery } from 'gatsby'
 import {Global, css} from '@emotion/core'
 import styled from '@emotion/styled'
-import { Helmet } from 'react-helmet'
 
 import Header from './header'
 import Footer from './footer'
 
-export default ({ children }: any) => {
-  const data = useStaticQuery(
+interface Props {
+  children?: any
+}
+
+interface queryTypes {
+  site: {
+    siteMetadata: {
+      siteTitle: string
+      siteUrl: string
+      siteDescription: string
+      author: string
+    }
+  }
+}
+
+export default ({children}: Props) => {
+  const data: queryTypes = useStaticQuery(
     graphql`
       query {
         site {
           siteMetadata {
             siteTitle,
-            siteUrl
+            siteUrl,
+            siteDescription
           }
         }
       }
     `
   )
+  const siteMetadata = data.site.siteMetadata
 
   return (
     <Wrapper>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>{data.site.siteMetadata.siteTitle}</title>
-        <link rel="canonical" href={data.site.siteMetadata.siteUrl} />
+        <title>{siteMetadata.siteTitle}</title>
+        <link rel="canonical" href={siteMetadata.siteUrl} />
       </Helmet>
       <Global
         styles={css`
@@ -38,9 +55,13 @@ export default ({ children }: any) => {
           }
         `
       }/>
-      <Header />
+      <Header
+        title={siteMetadata.siteTitle}
+        url={siteMetadata.siteUrl}
+        description={siteMetadata.siteDescription}
+      />
       {children}
-      <Footer />
+      <Footer author={siteMetadata.author} />
     </Wrapper>
   )
 }

@@ -1,41 +1,22 @@
 import React from 'react'
-import { graphql, useStaticQuery } from 'gatsby'
 import styled from '@emotion/styled'
 import { rhythm } from '../utils/typography'
 
-interface queryTypes {
-  site: {
-    siteMetadata: {
-      siteTitle: string
-      siteUrl: string
-      siteDescription: string
-    }
-  }
+interface Props {
+  title: string
+  url: string
+  description: string
 }
 
-export default () => {
-  const data: queryTypes = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            siteTitle,
-            siteUrl,
-            siteDescription
-          }
-        }
-      }
-    `
-  )
-
+export default ({title, url, description}: Props) => {
   return (
     <Header>
-      <a href={data.site.siteMetadata.siteUrl}>
+      <a href={url}>
         <Title>
-          {data.site.siteMetadata.siteTitle}
+          {title}
         </Title>
       </a>
-      <Description>{data.site.siteMetadata.siteDescription}</Description>
+      <Description>{description}</Description>
       <HeaderImage src={'image/title.jpg'} />
     </Header>
   )

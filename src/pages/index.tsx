@@ -5,8 +5,30 @@ import styled from '@emotion/styled'
 import Layout from '../components/layout'
 import Post from '../components/post'
 
+
+interface nodeTypes {
+  node: {
+    id: number
+    frontmatter: {
+      title: string
+      date: string
+    }
+    fields: {
+      slug: any
+    }
+    html: string
+  }
+}
+
+interface queryTypes {
+  allMarkdownRemark: {
+    totalCount: number
+    edges: nodeTypes[]
+  }
+}
+
 export default () => {
-  const data = useStaticQuery(
+  const data: queryTypes = useStaticQuery(
     graphql`
       query {
         allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
@@ -32,7 +54,7 @@ export default () => {
   return (
     <Layout>
       <PageCount>{data.allMarkdownRemark.totalCount} Posts</PageCount>
-      {data.allMarkdownRemark.edges.map(({ node }) => (
+      {data.allMarkdownRemark.edges.map(({ node }: nodeTypes) => (
         <Post key={node.id} content={node} />
       ))}
     </Layout>

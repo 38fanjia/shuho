@@ -3,15 +3,28 @@ import styled from '@emotion/styled'
 
 import { rhythm } from '../utils/typography'
 
-export default (data: any) => {
-  const post = data.content
+interface Props {
+  content: {
+    id: number
+    frontmatter: {
+      title: string
+      date: string
+    }
+    fields: {
+      slug: any
+    }
+    html: string
+  }
+}
+
+export default ({ content }: Props) => {
   return (
     <Wrapper>
       <div>
-        <Title>{post.frontmatter.title}</Title>
-        <Date>{post.frontmatter.date}</Date>
+        <Title>{content.frontmatter.title}</Title>
+        <Date>{content.frontmatter.date}</Date>
       </div>
-      <Body dangerouslySetInnerHTML={{ __html: post.html }} />
+      <Body dangerouslySetInnerHTML={{ __html: content.html }} />
     </Wrapper>
   )
 }
