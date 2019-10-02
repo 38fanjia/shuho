@@ -8,15 +8,17 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "lint": "eslint --ignore-pattern 'docs/*' .",
-    "lint:fix": "eslint . --fix",
+    "lint:fix": "eslint --ignore-pattern 'docs/*' . --fix",
+    "type-check": "tsc -p .",
     "dist": "rm -rf docs && gatsby build --prefix-paths && mv public/ docs/"
   },
   "dependencies": {
-    "@emotion/core": "^10.0.16",
-    "@emotion/styled-base": "^10.0.15",
+    "@emotion/core": "^10.0.17",
+    "@emotion/styled": "^10.0.17",
     "gatsby": "^2.13.65",
     "gatsby-plugin-emotion": "^4.1.2",
     "gatsby-plugin-react-helmet": "^3.1.3",
+    "gatsby-plugin-typescript": "^2.1.6",
     "gatsby-plugin-typography": "^2.3.2",
     "gatsby-source-filesystem": "^2.1.9",
     "gatsby-transformer-remark": "^2.6.14",
@@ -28,13 +30,30 @@
     "typography-theme-de-young": "^0.16.19"
   },
   "devDependencies": {
-    "eslint": "^6.1.0",
+    "@types/react": "^16.9.2",
+    "@types/react-dom": "^16.9.0",
+    "@types/react-helmet": "^5.0.9",
+    "eslint": "^6.3.0",
     "eslint-config-react-app": "^5.0.1",
-    "eslint-config-standard": "^13.0.1",
+    "eslint-config-standard": "^14.1.0",
     "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-node": "^9.2.0",
+    "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-react": "^7.14.3",
-    "eslint-plugin-standard": "^4.0.0"
+    "eslint-plugin-standard": "^4.0.1",
+    "husky": "^3.0.8",
+    "lint-staged": "^9.4.1",
+    "prettier": "^1.18.2",
+    "typescript": "^3.6.2"
+  },
+  "husky": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "prettier",
+      "git add"
+    ]
   }
 }
