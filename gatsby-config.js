@@ -5,6 +5,7 @@
  */
 
 module.exports = {
+  pathPrefix: '/shuho',
   /* Your site config here */
   siteMetadata: {
     siteTitle: 'shuho',
@@ -13,6 +14,7 @@ module.exports = {
     author: 'fanjia38',
     mainColor: '#00aa8c'
   },
+  /* plugins */
   plugins: [
     {
       resolve: 'gatsby-source-filesystem',

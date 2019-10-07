@@ -10,7 +10,7 @@
     "lint": "eslint --ignore-pattern 'docs/*' .",
     "lint:fix": "eslint --ignore-pattern 'docs/*' . --fix",
     "type-check": "tsc -p .",
-    "dist": "rm -rf docs && gatsby build --prefix-paths && mv public/ docs/"
+    "dist:push": "gatsby build --prefix-paths && gh-pages -d docs -b master"
   },
   "dependencies": {
     "@emotion/core": "^10.0.17",
@@ -42,6 +42,7 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-react": "^7.14.3",
     "eslint-plugin-standard": "^4.0.1",
+    "gh-pages": "^2.1.1",
     "husky": "^3.0.8",
     "lint-staged": "^9.4.1",
     "prettier": "^1.18.2",
