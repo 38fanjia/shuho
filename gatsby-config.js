@@ -23,14 +23,21 @@ module.exports = {
         path: `${__dirname}/posts/`
       }
     },
-    'gatsby-plugin-react-helmet',
-    'gatsby-transformer-remark',
     {
       resolve: 'gatsby-plugin-typography',
       options: {
         pathToConfigModule: 'src/utils/typography'
       }
     },
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        start_url: '/',
+        icon: 'image/favicon.ico'
+      }
+    }
+    'gatsby-plugin-react-helmet',
+    'gatsby-transformer-remark',
     'gatsby-plugin-emotion',
     'gatsby-plugin-typescript'
   ]

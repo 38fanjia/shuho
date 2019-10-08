@@ -10,13 +10,14 @@
     "lint": "eslint --ignore-pattern 'docs/*' .",
     "lint:fix": "eslint --ignore-pattern 'docs/*' . --fix",
     "type-check": "tsc -p .",
-    "dist:push": "gatsby build --prefix-paths && gh-pages -d docs -b master"
+    "dist:push": "gatsby build --prefix-paths && gh-pages --dest 'docs' --branch shuho"
   },
   "dependencies": {
     "@emotion/core": "^10.0.17",
     "@emotion/styled": "^10.0.17",
     "gatsby": "^2.13.65",
     "gatsby-plugin-emotion": "^4.1.2",
+    "gatsby-plugin-manifest": "^2.2.20",
     "gatsby-plugin-react-helmet": "^3.1.3",
     "gatsby-plugin-typescript": "^2.1.6",
     "gatsby-plugin-typography": "^2.3.2",
