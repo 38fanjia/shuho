@@ -5,6 +5,7 @@
  */
 
 module.exports = {
+  pathPrefix: '/shuho',
   /* Your site config here */
   siteMetadata: {
     siteTitle: 'shuho',
@@ -13,6 +14,7 @@ module.exports = {
     author: 'fanjia38',
     mainColor: '#00aa8c'
   },
+  /* plugins */
   plugins: [
     {
       resolve: 'gatsby-source-filesystem',
@@ -21,14 +23,21 @@ module.exports = {
         path: `${__dirname}/posts/`
       }
     },
-    'gatsby-plugin-react-helmet',
-    'gatsby-transformer-remark',
     {
       resolve: 'gatsby-plugin-typography',
       options: {
         pathToConfigModule: 'src/utils/typography'
       }
     },
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        start_url: '/',
+        icon: 'static/image/favicon.png'
+      }
+    },
+    'gatsby-plugin-react-helmet',
+    'gatsby-transformer-remark',
     'gatsby-plugin-emotion',
     'gatsby-plugin-typescript'
   ]
