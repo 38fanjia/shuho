@@ -10,7 +10,7 @@
     "lint": "eslint --ignore-pattern 'docs/*' .",
     "lint:fix": "eslint --ignore-pattern 'docs/*' . --fix",
     "type-check": "tsc -p .",
-    "dist:push": "gatsby build --prefix-paths && gh-pages --dest 'docs' --branch shuho"
+    "dist:push": "rm -rf public && gatsby build --prefix-paths && gh-pages -d public -e docs -b shuho"
   },
   "dependencies": {
     "@emotion/core": "^10.0.17",
