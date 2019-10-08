@@ -33,9 +33,9 @@ module.exports = {
       resolve: 'gatsby-plugin-manifest',
       options: {
         start_url: '/',
-        icon: 'image/favicon.ico'
+        icon: 'static/image/favicon.png'
       }
-    }
+    },
     'gatsby-plugin-react-helmet',
     'gatsby-transformer-remark',
     'gatsby-plugin-emotion',
