@@ -3,8 +3,9 @@ import { graphql, useStaticQuery } from 'gatsby'
 import styled from '@emotion/styled'
 
 import Layout from '../components/layout'
+import Header from '../components/header'
+import Footer from '../components/footer'
 import Post from '../components/post'
-
 
 interface nodeTypes {
   node: {
@@ -21,6 +22,14 @@ interface nodeTypes {
 }
 
 interface queryTypes {
+  site: {
+    siteMetadata: {
+      siteTitle: string
+      siteUrl: string
+      siteDescription: string
+      author: string
+    }
+  }
   allMarkdownRemark: {
     totalCount: number
     edges: nodeTypes[]
@@ -28,9 +37,17 @@ interface queryTypes {
 }
 
 export default () => {
-  const data: queryTypes = useStaticQuery(
+  const queryData: queryTypes = useStaticQuery(
     graphql`
       query {
+        site {
+          siteMetadata {
+            siteTitle,
+            siteUrl,
+            siteDescription
+            author
+          }
+        }
         allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
           totalCount
           edges {
@@ -50,13 +67,20 @@ export default () => {
       }
     `
   )
+  const { site, allMarkdownRemark } = queryData
 
   return (
     <Layout>
-      <PageCount>{data.allMarkdownRemark.totalCount} Posts</PageCount>
-      {data.allMarkdownRemark.edges.map(({ node }: nodeTypes) => (
+      <Header
+        title={site.siteMetadata.siteTitle}
+        url={site.siteMetadata.siteUrl}
+        description={site.siteMetadata.siteDescription}
+      />
+      <PageCount>{allMarkdownRemark.totalCount} Posts</PageCount>
+      {allMarkdownRemark.edges.map(({ node }: nodeTypes) => (
         <Post key={node.id} content={node} />
       ))}
+      <Footer author={site.siteMetadata.author} />
     </Layout>
   )
 }
