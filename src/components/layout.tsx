@@ -4,9 +4,6 @@ import { graphql, useStaticQuery } from 'gatsby'
 import {Global, css} from '@emotion/core'
 import styled from '@emotion/styled'
 
-import Header from './header'
-import Footer from './footer'
-
 interface Props {
   children?: any
 }
@@ -14,10 +11,8 @@ interface Props {
 interface queryTypes {
   site: {
     siteMetadata: {
-      siteTitle: string
-      siteUrl: string
-      siteDescription: string
-      author: string
+      title: string
+      url: string
     }
   }
 }
@@ -28,9 +23,8 @@ export default ({children}: Props) => {
       query {
         site {
           siteMetadata {
-            siteTitle,
-            siteUrl,
-            siteDescription
+            title,
+            url,
           }
         }
       }
@@ -42,8 +36,8 @@ export default ({children}: Props) => {
     <Wrapper>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>{siteMetadata.siteTitle}</title>
-        <link rel="canonical" href={siteMetadata.siteUrl} />
+        <title>{siteMetadata.title}</title>
+        <link rel="canonical" href={siteMetadata.url} />
       </Helmet>
       <Global
         styles={css`
@@ -55,13 +49,7 @@ export default ({children}: Props) => {
           }
         `
       }/>
-      <Header
-        title={siteMetadata.siteTitle}
-        url={siteMetadata.siteUrl}
-        description={siteMetadata.siteDescription}
-      />
       {children}
-      <Footer author={siteMetadata.author} />
     </Wrapper>
   )
 }

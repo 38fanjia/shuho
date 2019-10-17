@@ -8,9 +8,9 @@ module.exports = {
   pathPrefix: '/shuho',
   /* Your site config here */
   siteMetadata: {
-    siteTitle: 'shuho',
-    siteDescription: 'fanjia38 中文的周记。我的中文不好，たまに日本語。',
-    siteUrl: 'https://fanjia38.github.io/shuho/',
+    title: 'shuho',
+    description: 'fanjia38 中文的周记。我的中文不好，たまに日本語。',
+    url: 'https://fanjia38.github.io/shuho/',
     author: 'fanjia38',
     mainColor: '#00aa8c'
   },
