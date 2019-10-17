@@ -11,8 +11,8 @@ interface Props {
 interface queryTypes {
   site: {
     siteMetadata: {
-      siteTitle: string
-      siteUrl: string
+      title: string
+      url: string
     }
   }
 }
@@ -23,8 +23,8 @@ export default ({children}: Props) => {
       query {
         site {
           siteMetadata {
-            siteTitle,
-            siteUrl,
+            title,
+            url,
           }
         }
       }
@@ -36,8 +36,8 @@ export default ({children}: Props) => {
     <Wrapper>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>{siteMetadata.siteTitle}</title>
-        <link rel="canonical" href={siteMetadata.siteUrl} />
+        <title>{siteMetadata.title}</title>
+        <link rel="canonical" href={siteMetadata.url} />
       </Helmet>
       <Global
         styles={css`

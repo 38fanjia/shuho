@@ -24,9 +24,9 @@ interface nodeTypes {
 interface queryTypes {
   site: {
     siteMetadata: {
-      siteTitle: string
-      siteUrl: string
-      siteDescription: string
+      title: string
+      url: string
+      description: string
       author: string
     }
   }
@@ -42,9 +42,9 @@ export default () => {
       query {
         site {
           siteMetadata {
-            siteTitle,
-            siteUrl,
-            siteDescription
+            title,
+            url,
+            description
             author
           }
         }
@@ -72,9 +72,9 @@ export default () => {
   return (
     <Layout>
       <Header
-        title={site.siteMetadata.siteTitle}
-        url={site.siteMetadata.siteUrl}
-        description={site.siteMetadata.siteDescription}
+        title={site.siteMetadata.title}
+        url={site.siteMetadata.url}
+        description={site.siteMetadata.description}
       />
       <PageCount>{allMarkdownRemark.totalCount} Posts</PageCount>
       {allMarkdownRemark.edges.map(({ node }: nodeTypes) => (
