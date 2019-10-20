@@ -1,4 +1,4 @@
-const path = require("path")
+const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
@@ -22,7 +22,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     `
   )
   if (result.errors) {
-    reporter.panicOnBuild(`Error while running GraphQL query.`)
+    reporter.panicOnBuild('Error while running GraphQL query.')
     return
   }
   // ...
@@ -32,14 +32,14 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const numPages = Math.ceil(posts.length / postsPerPage)
   Array.from({ length: numPages }).forEach((_, i) => {
     createPage({
-      path: i === 0 ? `/` : `/page/${i + 1}`,
-      component: path.resolve("./src/templates/blog-list.tsx"),
+      path: i === 0 ? '/' : `/page/${i + 1}`,
+      component: path.resolve('./src/templates/blog-list.tsx'),
       context: {
         limit: postsPerPage,
         skip: i * postsPerPage,
         numPages,
-        currentPage: i + 1,
-      },
+        currentPage: i + 1
+      }
     })
   })
 }
