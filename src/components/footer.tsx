@@ -1,15 +1,24 @@
 import React from 'react'
+import { graphql, useStaticQuery } from 'gatsby'
 import styled from '@emotion/styled'
 import { rhythm } from '../utils/typography'
 
-interface Props {
-  author: string
-}
+export default () => {
+  const queryData = useStaticQuery(
+    graphql`
+      query {
+        site {
+          siteMetadata {
+            author
+          }
+        }
+      }
+    `
+  )
 
-export default (props: Props) => {
   return (
     <Footer>
-      <p>© 2019 {props.author}</p>
+      <p>© 2019 {queryData.site.siteMetadata.author}</p>
     </Footer>
   )
 }
