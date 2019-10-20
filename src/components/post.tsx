@@ -5,13 +5,9 @@ import { rhythm } from '../utils/typography'
 
 interface Props {
   content: {
-    id: number
     frontmatter: {
       title: string
       date: string
-    }
-    fields: {
-      slug: any
     }
     html: string
   }
