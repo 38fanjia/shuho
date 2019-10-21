@@ -6,7 +6,7 @@ export default () => {
   return (
     <Layout>
       <h1>Page not found.</h1>
-      <Link to="./">Back</Link>
+      <Link to="/">Back</Link>
     </Layout>
   )
 }

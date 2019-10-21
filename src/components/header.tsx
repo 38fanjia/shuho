@@ -1,13 +1,14 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { rhythm } from '../utils/typography'
-import { graphql, useStaticQuery } from 'gatsby'
+import { Link, graphql, useStaticQuery } from 'gatsby'
 
 export default () => {
   const queryData = useStaticQuery(
     graphql`
       query{
         site {
+          pathPrefix,
           siteMetadata {
             title,
             url,
@@ -17,16 +18,16 @@ export default () => {
       }
     `
   )
-  const siteMetadata = queryData.site.siteMetadata
+  const {pathPrefix, siteMetadata} = queryData.site
   return (
     <Header>
-      <a href={siteMetadata.url}>
+      <Link to="/">
         <Title>
           {siteMetadata.title}
         </Title>
-      </a>
+      </Link>
       <Description>{siteMetadata.description}</Description>
-      <HeaderImage src={'/image/title.jpg'} />
+      <HeaderImage src={`${pathPrefix}/image/title.jpg`} />
     </Header>
   )
 }
