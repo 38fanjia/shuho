@@ -1243,24 +1243,32 @@
     "@types/history" "*"
     "@types/react" "*"
 
-"@types/react-dom@^16.9.0":
-  version "16.9.0"
-  resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-16.9.0.tgz#ba6ddb00bf5de700b0eb91daa452081ffccbfdea"
-  integrity sha512-OL2lk7LYGjxn4b0efW3Pvf2KBVP0y1v3wip1Bp7nA79NkOpElH98q3WdCEdDj93b2b0zaeBG9DvriuKjIK5xDA==
+"@types/react-dom@^16.9.3":
+  version "16.9.3"
+  resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-16.9.3.tgz#4006ff0e13958af91313869077c04cb20d9b9d04"
+  integrity sha512-FUuZKXPr9qlzUT9lhuzrZgLjH63TvNn28Ch3MvKG4B+F52zQtO8DtE0Opbncy3xaucNZM2WIPfuNTgkbKx5Brg==
   dependencies:
     "@types/react" "*"
 
-"@types/react-helmet@^5.0.9":
-  version "5.0.9"
-  resolved "https://registry.yarnpkg.com/@types/react-helmet/-/react-helmet-5.0.9.tgz#60ab5accce74b168ca1d274671522f6b2cf2c98f"
-  integrity sha512-0UVaMQk/Xvq6rFaGyepSBnRApy5RE+YH0XAXlbOBhtez5D9y1/jxKaKODofPzNnJLoLQ+sATTsWQIvrw1Dtiag==
+"@types/react-helmet@^5.0.13":
+  version "5.0.13"
+  resolved "https://registry.yarnpkg.com/@types/react-helmet/-/react-helmet-5.0.13.tgz#ccda7effa4fbd67d92321c856db504c1a206cb44"
+  integrity sha512-YvdsLKH9FGAAhoQvjYAyhBo/qpYrY5glpAf6og+0batlGyub6YHAawHx/cfw0rdOxjVPZMNhDC+xNmYnWM7EYQ==
   dependencies:
     "@types/react" "*"
 
-"@types/react@*", "@types/react@^16.8.12", "@types/react@^16.8.6", "@types/react@^16.9.2":
+"@types/react@*", "@types/react@^16.8.12", "@types/react@^16.8.6":
   version "16.9.2"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-16.9.2.tgz#6d1765431a1ad1877979013906731aae373de268"
   integrity sha512-jYP2LWwlh+FTqGd9v7ynUKZzjj98T8x7Yclz479QdRhHfuW9yQ+0jjnD31eXSXutmBpppj5PYNLYLRfnZJvcfg==
+  dependencies:
+    "@types/prop-types" "*"
+    csstype "^2.2.0"
+
+"@types/react@^16.9.11":
+  version "16.9.11"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.9.11.tgz#70e0b7ad79058a7842f25ccf2999807076ada120"
+  integrity sha512-UBT4GZ3PokTXSWmdgC/GeCGEJXE5ofWyibCcecRLUVN2ZBpXQGVgQGtG2foS7CrTKFKlQVVswLvf7Js6XA/CVQ==
   dependencies:
     "@types/prop-types" "*"
     csstype "^2.2.0"
@@ -11422,10 +11430,10 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-typescript@^3.6.2:
-  version "3.6.2"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.6.2.tgz#105b0f1934119dde543ac8eb71af3a91009efe54"
-  integrity sha512-lmQ4L+J6mnu3xweP8+rOrUwzmN+MRAj7TgtJtDaXE5PMyX2kCrklhg3rvOsOIfNeAWMQWO2F1GPc1kMD2vLAfw==
+typescript@^3.6.4:
+  version "3.6.4"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.6.4.tgz#b18752bb3792bc1a0281335f7f6ebf1bbfc5b91d"
+  integrity sha512-unoCll1+l+YK4i4F8f22TaNVPRHcD9PA3yCuZ8g5e0qGqlVlJ/8FSateOLLSagn+Yg5+ZwuPkL8LFUc0Jcvksg==
 
 typography-breakpoint-constants@^0.16.19:
   version "0.16.19"
