@@ -17,15 +17,15 @@ export default ({currentPage, numPages}: Props) => {
   return (
     <Wrapper>
       <List disabled={isFirst}>
-        <StyledLink to="/">&lt;</StyledLink>
+        <StyledLink href="/shuho/">&lt;</StyledLink>
       </List>
       {pageList.map((_, i: number) => (
         <List key={i} current={currentPage === i + 1}>
-          <StyledLink to={i === 0 ? '/' : `/page/${i+1}`}>{i + 1}</StyledLink>
+          <StyledLink href={i === 0 ? '/shuho/' : `/shuho/page/${i+1}`}>{i + 1}</StyledLink>
         </List>
       ))}
       <List disabled={isLast}>
-        <StyledLink to={`/page/${numPages}`}>&gt;</StyledLink>
+        <StyledLink href={`/shuho/page/${numPages}`}>&gt;</StyledLink>
       </List>
     </Wrapper>
   )
@@ -38,7 +38,7 @@ const Wrapper = styled.ul`
   list-style: none;
 `
 
-const StyledLink = styled(Link)``
+const StyledLink = styled.a``
 
 interface ListProps {
   disabled?: boolean

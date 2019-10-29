@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { rhythm } from '../utils/typography'
-import { Link, graphql, useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 
 export default () => {
   const queryData = useStaticQuery(
@@ -21,11 +21,11 @@ export default () => {
   const {pathPrefix, siteMetadata} = queryData.site
   return (
     <Header>
-      <Link to="/">
+      <a href={`${pathPrefix}/`}>
         <Title>
           {siteMetadata.title}
         </Title>
-      </Link>
+      </a>
       <Description>{siteMetadata.description}</Description>
       <HeaderImage src={`${pathPrefix}/image/title.jpg`} />
     </Header>

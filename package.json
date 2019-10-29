@@ -8,8 +8,8 @@
     "develop": "gatsby develop",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "lint": "eslint --ignore-pattern 'docs/*' .",
-    "lint:fix": "eslint --ignore-pattern 'docs/*' . --fix",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "type-check": "tsc -p .",
     "gh:push": "gh-pages -d public -e docs -b shuho -m ':rocket: Updates'",
     "dist": "run-s clean build gh:push"
