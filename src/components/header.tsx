@@ -8,6 +8,7 @@ export default () => {
     graphql`
       query{
         site {
+          pathPrefix,
           siteMetadata {
             title,
             url,
@@ -17,16 +18,16 @@ export default () => {
       }
     `
   )
-  const siteMetadata = queryData.site.siteMetadata
+  const {pathPrefix, siteMetadata} = queryData.site
   return (
     <Header>
-      <a href={siteMetadata.url}>
+      <a href={`${pathPrefix}/`}>
         <Title>
           {siteMetadata.title}
         </Title>
       </a>
       <Description>{siteMetadata.description}</Description>
-      <HeaderImage src={'/image/title.jpg'} />
+      <HeaderImage src={`${pathPrefix}/image/title.jpg`} />
     </Header>
   )
 }

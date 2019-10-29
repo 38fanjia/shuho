@@ -1,57 +1,77 @@
 import React from 'react'
+import { Link } from 'gatsby'
 import { css } from '@emotion/core'
 import styled from '@emotion/styled'
 import { rhythm } from '../utils/typography'
 
-export default ({currentPage, numPages}) => {
-  const pageList: any = Array.from({ length: numPages })
+interface Props {
+  currentPage: number
+  numPages: number
+}
+
+export default ({currentPage, numPages}: Props) => {
   const isFirst: boolean = currentPage === 1
   const isLast: boolean = numPages === currentPage
 
   return (
     <Wrapper>
-      <Page disabled={isFirst} href="/">&lt;</Page>
-      {pageList.map((_, i) => (
-        <Page key={i} current={currentPage === i + 1} href={i === 0 ? '/' : `/page/${i+1}`}>{i + 1}</Page>
+      <List disabled={isFirst}>
+        <StyledLink href="/shuho/">&lt;</StyledLink>
+      </List>
+      {[...Array(numPages)].map((_, i: number) => (
+        <List key={i} current={currentPage === i + 1}>
+          <StyledLink href={i === 0 ? '/shuho/' : `/shuho/page/${i+1}`}>{i + 1}</StyledLink>
+        </List>
       ))}
-      <Page disabled={isLast} href={`/page/${numPages}`}>&gt;</Page>
+      <List disabled={isLast}>
+        <StyledLink href={`/shuho/page/${numPages}`}>&gt;</StyledLink>
+      </List>
     </Wrapper>
   )
 }
 
-const Wrapper = styled.div`
+const Wrapper = styled.ul`
   display: flex;
   justify-content: center;
-  margin-bottom: ${rhythm(3)};
+  margin: 0 0 ${rhythm(3)};
+  list-style: none;
 `
 
-interface PageProps {
-  current?: boolean
-  disabled?: boolean
-}
-const Page = styled.a<PageProps>`
+const StyledLink = styled.a`
   width: 30px;
   height: 30px;
+  line-height: 30px;
   color: #00aa8c;
-  text-align: center;
-  margin-right: 5px;
   border-radius: 15px;
-  &:last-child {
-    margin: 0;
-  }
+  display: inline-block;
+  text-align: center;
   &:hover {
     box-shadow: none;
     background-color: #91ceb8;
     color: white;
   }
-  ${props => props.current && css`
-    background-color: #00aa8c;
-    color: white;
-  `}
-  ${props => props.disabled && css`
-    color: #91ceb8;
-  `}
-  ${props => (props.current || props.disabled) && css`
-    pointer-events: none;
-  `}
+`
+
+interface ListProps {
+  disabled?: boolean
+  current?: boolean
+}
+const List = styled.li<ListProps>`
+  margin: 0;
+  margin-right: 5px;
+  &:last-child {
+    margin: 0;
+  }
+  ${StyledLink} {
+    ${props => props.current && css`
+      background-color: #00aa8c;
+      color: white;
+    `}
+    ${props => props.disabled && css`
+      color: #91ceb8;
+    `}
+    ${props => (props.current || props.disabled) && css`
+      pointer-events: none;
+    `}
+  }
 `
