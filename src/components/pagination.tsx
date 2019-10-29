@@ -10,7 +10,6 @@ interface Props {
 }
 
 export default ({currentPage, numPages}: Props) => {
-  const pageList: any = Array.from({ length: numPages })
   const isFirst: boolean = currentPage === 1
   const isLast: boolean = numPages === currentPage
 
@@ -19,7 +18,7 @@ export default ({currentPage, numPages}: Props) => {
       <List disabled={isFirst}>
         <StyledLink href="/shuho/">&lt;</StyledLink>
       </List>
-      {pageList.map((_, i: number) => (
+      {[...Array(numPages)].map((_, i: number) => (
         <List key={i} current={currentPage === i + 1}>
           <StyledLink href={i === 0 ? '/shuho/' : `/shuho/page/${i+1}`}>{i + 1}</StyledLink>
         </List>
@@ -38,7 +37,20 @@ const Wrapper = styled.ul`
   list-style: none;
 `
 
-const StyledLink = styled.a``
+const StyledLink = styled.a`
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  color: #00aa8c;
+  border-radius: 15px;
+  display: inline-block;
+  text-align: center;
+  &:hover {
+    box-shadow: none;
+    background-color: #91ceb8;
+    color: white;
+  }
+`
 
 interface ListProps {
   disabled?: boolean
@@ -51,17 +63,6 @@ const List = styled.li<ListProps>`
     margin: 0;
   }
   ${StyledLink} {
-    width: 30px;
-    height: 30px;
-    color: #00aa8c;
-    border-radius: 15px;
-    display: inline-block;
-    text-align: center;
-    &:hover {
-      box-shadow: none;
-      background-color: #91ceb8;
-      color: white;
-    }
     ${props => props.current && css`
       background-color: #00aa8c;
       color: white;
