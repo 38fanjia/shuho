@@ -25,6 +25,7 @@ jobs:
 
       - run: yarn lint
       - run: yarn type-check
+      - run: yarn stylelint
 
       # commit
       # - run: git config user.name $GITHUB_NAME
