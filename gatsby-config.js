@@ -20,7 +20,7 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'post',
-        path: `${__dirname}/posts/`
+        path: `${__dirname}/assets/`
       }
     },
     {
@@ -46,6 +46,8 @@ module.exports = {
         jsxPragma: 'jsx',
         allExtensions: true
       }
-    }
+    },
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp'
   ]
 }
