@@ -41,6 +41,10 @@ jobs:
     name: build and staging deploy
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        node-versions: [12.x]
+
     steps:
     - uses: actions/checkout@v1
     - name: Use Node.js ${{ matrix.node-version }}
@@ -53,6 +57,9 @@ jobs:
         echo "node: `node --version`"
         echo "npm:  v`npm --version`"
         echo "yarn: v`yarn --version`"
+
+    - name: package install
+      run: yarn install
 
     - name: build
       run: yarn build
