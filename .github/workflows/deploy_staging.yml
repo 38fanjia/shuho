@@ -37,8 +37,8 @@ jobs:
       env:
         CI: true
 
-  deploy_to_zeit_now_staging:
-    name: Deploy and Alias with PR number
+  build:
+    name: build and staging deploy
     runs-on: ubuntu-latest
     needs: test
 
