@@ -1,12 +1,20 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { rhythm } from '../utils/typography'
-import { graphql, useStaticQuery } from 'gatsby'
+import { Link, graphql, useStaticQuery } from 'gatsby'
+import Img from 'gatsby-image'
 
 export default () => {
-  const queryData = useStaticQuery(
+  const data = useStaticQuery(
     graphql`
       query{
+        file(relativePath: { eq: "images/title.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 900) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
         site {
           pathPrefix,
           siteMetadata {
@@ -18,16 +26,19 @@ export default () => {
       }
     `
   )
-  const {pathPrefix, siteMetadata} = queryData.site
+  const {siteMetadata} = data.site
   return (
     <Header>
-      <a href={`${pathPrefix}/`}>
+      <Link to={`/`}>
         <Title>
           {siteMetadata.title}
         </Title>
-      </a>
+      </Link>
       <Description>{siteMetadata.description}</Description>
-      <HeaderImage src={`${pathPrefix}/image/title.jpg`} />
+      <HeaderImage
+        fluid={data.file.childImageSharp.fluid}
+        alt="shuho"
+      />
     </Header>
   )
 }
@@ -46,7 +57,7 @@ const Description = styled.p`
   font-size: 0.7rem;
 `
 
-const HeaderImage = styled.img`
+const HeaderImage = styled(Img)`
   max-width: 900px;
   width: 100%;
 `
