@@ -37,23 +37,23 @@ jobs:
       env:
         CI: true
 
-  build:
-    name: build and staging deploy
-    runs-on: ubuntu-latest
-    needs: test
+  # build:
+  #   name: build and staging deploy
+  #   runs-on: ubuntu-latest
+  #   needs: test
 
-    steps:
-    - uses: actions/checkout@v1
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
+  #   steps:
+  #   - uses: actions/checkout@v1
+  #   - name: Use Node.js ${{ matrix.node-version }}
+  #     uses: actions/setup-node@v1
+  #     with:
+  #       node-version: ${{ matrix.node-version }}
 
-    - name: "[INFO] Versions"
-      run: |
-        echo "node: `node --version`"
-        echo "npm:  v`npm --version`"
-        echo "yarn: v`yarn --version`"
+  #   - name: "[INFO] Versions"
+  #     run: |
+  #       echo "node: `node --version`"
+  #       echo "npm:  v`npm --version`"
+  #       echo "yarn: v`yarn --version`"
 
-    - name: build
-      run: yarn build
+  #   - name: build
+  #     run: yarn build
