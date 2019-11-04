@@ -14,7 +14,7 @@
     "stylelint": "stylelint './src/**/*.tsx'",
     "type-check": "tsc -p .",
     "gh:push": "gh-pages -d public -e docs -b shuho -m ':rocket: Updates'",
-    "dist": "run-s clean build gh:push"
+    "dist": "run-s clean build:prd gh:push"
   },
   "dependencies": {
     "@emotion/core": "^10.0.22",
