@@ -37,7 +37,19 @@ module.exports = {
       }
     },
     'gatsby-plugin-react-helmet',
-    'gatsby-transformer-remark',
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: [
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              maxWidth: 900,
+            },
+          },
+        ],
+      },
+    },
     'gatsby-plugin-emotion',
     {
       resolve: 'gatsby-plugin-typescript',
