@@ -17,6 +17,14 @@ module.exports = {
   /* plugins */
   plugins: [
     {
+      resolve: 'gatsby-plugin-typescript',
+      options: {
+        isTSX: true,
+        jsxPragma: 'jsx',
+        allExtensions: true
+      }
+    },
+    {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'post',
@@ -37,16 +45,8 @@ module.exports = {
       }
     },
     'gatsby-plugin-react-helmet',
-    'gatsby-transformer-remark',
     'gatsby-plugin-emotion',
-    {
-      resolve: 'gatsby-plugin-typescript',
-      options: {
-        isTSX: true,
-        jsxPragma: 'jsx',
-        allExtensions: true
-      }
-    },
+    'gatsby-transformer-remark',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp'
   ]

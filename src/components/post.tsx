@@ -98,6 +98,11 @@ const Body = styled.div`
     border-radius: 3px;
   }
 
+  blockquote {
+    color: #9e9e9e;
+    border-left: 6px solid #9e9e9e
+  }
+
   @media screen and (max-width: 768px){
     padding: 0 10px;
   }
