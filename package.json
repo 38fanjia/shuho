@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "clean": "rm -rf public",
+    "clean": "gatsby clean",
     "build": "gatsby build --prefix-paths",
     "develop": "gatsby develop --open 'chrome'",
     "start": "npm run develop",
@@ -12,7 +12,8 @@
     "lint:fix": "eslint . --fix",
     "stylelint": "stylelint './src/**/*.tsx'",
     "type-check": "tsc -p .",
-    "gh:push": "gh-pages -d public -e docs -b shuho -m ':rocket: Updates'",
+    "gh:push": "gh-pages -d public -m ':rocket: Updates'",
+    "gh:clean": "rm -rf node_modules/gh-pages/.cache",
     "dist": "run-s clean build gh:push"
   },
   "dependencies": {
