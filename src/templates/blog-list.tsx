@@ -1,8 +1,8 @@
-import React from "react"
-import { graphql } from "gatsby"
+import React from 'react'
+import { graphql } from 'gatsby'
 import styled from '@emotion/styled'
 
-import Layout from "../components/layout"
+import Layout from '../components/layout'
 import Header from '../components/header'
 import Footer from '../components/footer'
 import Post from '../components/post'
@@ -37,14 +37,13 @@ export default class BlogList extends React.Component<Props> {
     return (
       <Layout>
         <Header />
-        <PageCount>{this.props.data.allMarkdownRemark.totalCount} Posts</PageCount>
+        <PageCount>
+          {this.props.data.allMarkdownRemark.totalCount} Posts
+        </PageCount>
         {posts.map(({ node }) => (
           <Post key={node.id} content={node} />
         ))}
-        <Pagination
-          currentPage={currentPage}
-          numPages={numPages}
-        />
+        <Pagination currentPage={currentPage} numPages={numPages} />
         <Footer />
       </Layout>
     )

@@ -7,7 +7,7 @@ import Img from 'gatsby-image'
 export default () => {
   const data = useStaticQuery(
     graphql`
-      query{
+      query {
         file(relativePath: { eq: "images/title.jpg" }) {
           childImageSharp {
             fluid(maxWidth: 900) {
@@ -16,29 +16,24 @@ export default () => {
           }
         }
         site {
-          pathPrefix,
+          pathPrefix
           siteMetadata {
-            title,
-            url,
+            title
+            url
             description
           }
         }
       }
     `
   )
-  const {siteMetadata} = data.site
+  const { siteMetadata } = data.site
   return (
     <Header>
       <Link to={`/`}>
-        <Title>
-          {siteMetadata.title}
-        </Title>
+        <Title>{siteMetadata.title}</Title>
       </Link>
       <Description>{siteMetadata.description}</Description>
-      <HeaderImage
-        fluid={data.file.childImageSharp.fluid}
-        alt="shuho"
-      />
+      <HeaderImage fluid={data.file.childImageSharp.fluid} alt="shuho" />
     </Header>
   )
 }

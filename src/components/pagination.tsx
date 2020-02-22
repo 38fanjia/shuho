@@ -9,7 +9,7 @@ interface Props {
   numPages: number
 }
 
-export default ({currentPage, numPages}: Props) => {
+export default ({ currentPage, numPages }: Props) => {
   const isFirst: boolean = currentPage === 1
   const isLast: boolean = numPages === currentPage
 
@@ -20,7 +20,7 @@ export default ({currentPage, numPages}: Props) => {
       </List>
       {[...Array(numPages)].map((_, i: number) => (
         <List key={i} current={currentPage === i + 1}>
-          <StyledLink to={i === 0 ? '/' : `/page/${i+1}`}>{i + 1}</StyledLink>
+          <StyledLink to={i === 0 ? '/' : `/page/${i + 1}`}>{i + 1}</StyledLink>
         </List>
       ))}
       <List disabled={isLast}>
@@ -63,15 +63,21 @@ const List = styled.li<ListProps>`
     margin: 0;
   }
   ${StyledLink} {
-    ${props => props.current && css`
-      background-color: #00aa8c;
-      color: white;
-    `}
-    ${props => props.disabled && css`
-      color: #91ceb8;
-    `}
-    ${props => (props.current || props.disabled) && css`
-      pointer-events: none;
-    `}
+    ${props =>
+      props.current &&
+      css`
+        background-color: #00aa8c;
+        color: white;
+      `}
+    ${props =>
+      props.disabled &&
+      css`
+        color: #91ceb8;
+      `}
+    ${props =>
+      (props.current || props.disabled) &&
+      css`
+        pointer-events: none;
+      `}
   }
 `

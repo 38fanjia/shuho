@@ -12,6 +12,7 @@
     "lint:fix": "eslint . --fix",
     "stylelint": "stylelint './src/**/*.tsx'",
     "type-check": "tsc -p .",
+    "prettier:all": "prettier --write 'src/**'",
     "gh:push": "gh-pages -d public -m ':rocket: Updates'",
     "gh:clean": "rm -rf node_modules/gh-pages/.cache",
     "dist": "run-s clean build gh:push"
