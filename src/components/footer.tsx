@@ -33,7 +33,7 @@ const Footer = styled.footer`
     font-size: 0.8em;
   }
 
-  @media screen and (max-width: 768px){
+  @media screen and (max-width: 768px) {
     background-color: #646464;
     color: #fff;
   }

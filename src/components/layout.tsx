@@ -1,7 +1,7 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import { graphql, useStaticQuery } from 'gatsby'
-import {Global, css} from '@emotion/core'
+import { Global, css } from '@emotion/core'
 import styled from '@emotion/styled'
 
 interface Props {
@@ -17,14 +17,14 @@ interface queryTypes {
   }
 }
 
-export default ({children}: Props) => {
+export default ({ children }: Props) => {
   const data: queryTypes = useStaticQuery(
     graphql`
       query {
         site {
           siteMetadata {
-            title,
-            url,
+            title
+            url
           }
         }
       }
@@ -47,8 +47,8 @@ export default ({children}: Props) => {
           a {
             color: #00aa8c;
           }
-        `
-      }/>
+        `}
+      />
       {children}
     </Wrapper>
   )
@@ -58,5 +58,6 @@ const Wrapper = styled.div`
   margin: 0 auto;
   max-width: 900px;
   color: #646464;
-  font-family: arial,"Microsoft Yahei","微软雅黑",Tahoma,Arial,Helvetica,PingFang SC,'Alegreya',sans-serif;
+  font-family: arial, 'Microsoft Yahei', '微软雅黑', Tahoma, Arial, Helvetica,
+    PingFang SC, 'Alegreya', sans-serif;
 `

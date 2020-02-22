@@ -27,7 +27,7 @@ export default ({ content }: Props) => {
 const Wrapper = styled.article`
   margin-bottom: ${rhythm(3)};
 
-  @media screen and (max-width: 768px){
+  @media screen and (max-width: 768px) {
     margin: 0 5px ${rhythm(3)};
   }
 `
@@ -44,7 +44,7 @@ const Title = styled.div`
     margin-left: 5px;
   }
 
-  @media screen and (max-width: 768px){
+  @media screen and (max-width: 768px) {
     font-size: ${rhythm(0.8)};
   }
 `
@@ -100,10 +100,10 @@ const Body = styled.div`
 
   blockquote {
     color: #9e9e9e;
-    border-left: 6px solid #9e9e9e
+    border-left: 6px solid #9e9e9e;
   }
 
-  @media screen and (max-width: 768px){
+  @media screen and (max-width: 768px) {
     padding: 0 10px;
   }
 `
