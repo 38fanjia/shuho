@@ -14,6 +14,7 @@ interface EdgesType {
     frontmatter: {
       title: string
       date: string
+      photo: string
     }
     html: string
   }
@@ -64,6 +65,7 @@ export const blogListQuery = graphql`
           frontmatter {
             title
             date(formatString: "YYYY-MM-DD")
+            photo
           }
           html
         }
