@@ -49,11 +49,11 @@ module.exports = {
     'gatsby-transformer-remark',
     'gatsby-plugin-sharp',
     {
-      resolve: `gatsby-transformer-sharp`,
+      resolve: 'gatsby-transformer-sharp',
       options: {
         // The option defaults to true
-        checkSupportedExtensions: false,
-      },
+        checkSupportedExtensions: false
+      }
     }
   ]
 }
