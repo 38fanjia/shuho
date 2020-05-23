@@ -63,18 +63,18 @@ const List = styled.li<ListProps>`
     margin: 0;
   }
   ${StyledLink} {
-    ${props =>
+    ${(props) =>
       props.current &&
       css`
         background-color: #00aa8c;
         color: white;
       `}
-    ${props =>
+    ${(props) =>
       props.disabled &&
       css`
         color: #91ceb8;
       `}
-    ${props =>
+    ${(props) =>
       (props.current || props.disabled) &&
       css`
         pointer-events: none;
