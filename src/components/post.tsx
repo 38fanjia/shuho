@@ -22,7 +22,7 @@ export default ({ content }: Props) => {
       <div>
         <Title>{title}</Title>
         <Date>{date}</Date>
-        {photo && <StyledImage filename={`images/${photo}.jpg`} alt={photo}/> }
+        {photo && <StyledImage filename={`images/${photo}.jpg`} alt={photo} />}
       </div>
       <Body dangerouslySetInnerHTML={{ __html: content.html }} />
     </Wrapper>

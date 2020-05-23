@@ -7,7 +7,7 @@ interface Props {
   filename: string
   alt: string
 }
-export default ({className, filename, alt}: Props) => (
+export default ({ className, filename, alt }: Props) => (
   <StaticQuery
     query={graphql`
       query {
@@ -26,16 +26,15 @@ export default ({className, filename, alt}: Props) => (
         }
       }
     `}
-
     render={(data) => {
-      const image = data.images.edges.find(n => {
+      const image = data.images.edges.find((n) => {
         return n.node.relativePath.includes(filename)
       })
 
       if (!image) return
 
       const imageSizes = image.node.childImageSharp.sizes
-      return <Img className={className}　sizes={imageSizes} alt={alt}/>
+      return <Img className={className} sizes={imageSizes} alt={alt} />
     }}
   />
 )
