@@ -8,13 +8,6 @@ export default () => {
   const data = useStaticQuery(
     graphql`
       query {
-        file(relativePath: { eq: "images/title.jpg" }) {
-          childImageSharp {
-            fluid(maxWidth: 900) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
         site {
           pathPrefix
           siteMetadata {
@@ -33,7 +26,6 @@ export default () => {
         <Title>{siteMetadata.title}</Title>
       </Link>
       <Description>{siteMetadata.description}</Description>
-      <HeaderImage fluid={data.file.childImageSharp.fluid} alt="shuho" />
     </Header>
   )
 }

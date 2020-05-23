@@ -1,12 +1,14 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { rhythm } from '../utils/typography'
+import Image from './image'
 
 interface Props {
   content: {
     frontmatter: {
       title: string
       date: string
+      photo: string
     }
     html: string
   }
@@ -18,6 +20,7 @@ export default ({ content }: Props) => {
       <div>
         <Title>{content.frontmatter.title}</Title>
         <Date>{content.frontmatter.date}</Date>
+        <StyledImage filename={`images/${content.frontmatter.photo}.jpg`} alt={content.frontmatter.photo}/>
       </div>
       <Body dangerouslySetInnerHTML={{ __html: content.html }} />
     </Wrapper>
@@ -55,6 +58,10 @@ const Date = styled.h3`
   color: #00aa8c;
   text-align: right;
   margin: 0;
+`
+
+const StyledImage = styled(Image)`
+  margin: 14px auto;
 `
 
 const Body = styled.div`
