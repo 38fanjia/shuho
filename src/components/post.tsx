@@ -15,12 +15,14 @@ interface Props {
 }
 
 export default ({ content }: Props) => {
+  const { title, date, photo } = content.frontmatter
+
   return (
     <Wrapper>
       <div>
-        <Title>{content.frontmatter.title}</Title>
-        <Date>{content.frontmatter.date}</Date>
-        <StyledImage filename={`images/${content.frontmatter.photo}.jpg`} alt={content.frontmatter.photo}/>
+        <Title>{title}</Title>
+        <Date>{date}</Date>
+        {photo && <StyledImage filename={`images/${photo}.jpg`} alt={photo}/> }
       </div>
       <Body dangerouslySetInnerHTML={{ __html: content.html }} />
     </Wrapper>

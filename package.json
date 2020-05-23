@@ -5,7 +5,7 @@
   "scripts": {
     "clean": "gatsby clean",
     "build": "gatsby build --prefix-paths",
-    "develop": "gatsby develop --open 'chrome'",
+    "develop": "gatsby develop --open true",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "lint": "eslint .",
