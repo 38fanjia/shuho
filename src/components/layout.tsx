@@ -1,7 +1,7 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import { graphql, useStaticQuery } from 'gatsby'
-import { Global, css } from '@emotion/core'
+import { Global, css } from '@emotion/react'
 import styled from '@emotion/styled'
 
 interface Props {
