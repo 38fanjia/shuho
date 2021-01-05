@@ -17,8 +17,8 @@ export default ({ className, filename, alt }: Props) => (
               relativePath
               name
               childImageSharp {
-                sizes(maxWidth: 1000) {
-                  ...GatsbyImageSharpSizes
+                fluid(maxWidth: 1000) {
+                  ...GatsbyImageSharpFluid
                 }
               }
             }
@@ -33,8 +33,7 @@ export default ({ className, filename, alt }: Props) => (
 
       if (!image) return
 
-      const imageSizes = image.node.childImageSharp.sizes
-      return <Img className={className} sizes={imageSizes} alt={alt} />
+      return <Img className={className} fluid={image.node.childImageSharp.fluid} alt={alt} />
     }}
   />
 )
