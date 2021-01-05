@@ -18,6 +18,7 @@
     "dist": "run-s clean build gh:push"
   },
   "dependencies": {
+    "@emotion/eslint-plugin": "^11.0.0",
     "@emotion/react": "^11.1.4",
     "@emotion/styled": "^11.0.0",
     "gatsby": "^2.29.3",
