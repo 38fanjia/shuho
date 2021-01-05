@@ -19,11 +19,13 @@
     "sourceType": "module"
   },
   "plugins": [
-    "react"
+    "react",
+    "@emotion"
   ],
   "rules": {
     "react/display-name": "off",
-    "react/prop-types": "off"
+    "react/prop-types": "off",
+    "@emotion/pkg-renaming": "error"
   },
   "settings": {
     "react": {

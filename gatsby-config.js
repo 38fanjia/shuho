@@ -3,6 +3,7 @@
  *
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
+const path = require('path')
 
 module.exports = {
   pathPrefix: '/shuho',
@@ -28,7 +29,7 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'post',
-        path: `${__dirname}/assets/`
+        path: path.join(__dirname, '/assets/')
       }
     },
     {
