@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[3],{"i6+/":function(n,e,t){"use strict";t.r(e);t("q1tI");var u=t("9Dj+"),c=t("AeFk");e.default=function(){return Object(c.b)(u.a,null,Object(c.b)("h1",null,"Page not found."),Object(c.b)("a",{href:"/shuho/"},"Back"))}}}]);
+//# sourceMappingURL=component---src-pages-404-tsx-e6cd6e946af20d306844.js.map
